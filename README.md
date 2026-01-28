@@ -197,7 +197,3 @@ GitHub Actionsで自動テストが実行されます（push/PR時）:
 ## License
 
 MIT
-
-## Author
-
-[Your Name](https://github.com/martake)
