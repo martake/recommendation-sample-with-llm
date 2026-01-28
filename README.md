@@ -1,6 +1,8 @@
 # Synthetic Recommender Benchmark with LLM Assistant
 
-推薦アルゴリズムの比較ベンチマークと、LLMによるインサイト生成を行うWebアプリケーションです。
+購買行動における推薦アルゴリズムの比較ベンチマークと、LLMによるインサイト生成を行うWebアプリケーションです。
+
+![Image Board](docs/imageboard.png)
 
 **Demo:** [GitHub Pages](https://martake.github.io/recommendation-sample-with-llm/)
 
