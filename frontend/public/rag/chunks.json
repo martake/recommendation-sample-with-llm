@@ -1,0 +1,225 @@
+[
+  {
+    "id": "rules_0",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions"
+    ],
+    "text": "# Synthetic Recommender Benchmark - Rules and Definitions"
+  },
+  {
+    "id": "rules_1",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "1. Purchase Rules (購買ルール)"
+    ],
+    "text": "## 1. Purchase Rules (購買ルール)"
+  },
+  {
+    "id": "rules_2",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "1. Purchase Rules (購買ルール)",
+      "1.1 User Attributes"
+    ],
+    "text": "### 1.1 User Attributes\nEach user has RGB color attributes:\n- `r`: Red component (0-255)\n- `g`: Green component (0-255)\n- `b`: Blue component (0-255)"
+  },
+  {
+    "id": "rules_3",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "1. Purchase Rules (購買ルール)",
+      "1.2 Item Attributes"
+    ],
+    "text": "### 1.2 Item Attributes\nEach item has:\n- `color`: One of R (Red), G (Green), or B (Blue)\n- `count`: A number from 1 to 10\n- Total items: 30 (3 colors × 10 counts)\n- Item IDs: R-1, R-2, ..., R-10, G-1, ..., G-10, B-1, ..., B-10"
+  },
+  {
+    "id": "rules_4",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "1. Purchase Rules (購買ルール)",
+      "1.3 Purchase Decision Rule"
+    ],
+    "text": "### 1.3 Purchase Decision Rule\nA user purchases an item if their corresponding color component exceeds the threshold T (default: 160):\n- If item.color == R → user purchases if user.r >= T\n- If item.color == G → user purchases if user.g >= T\n- If item.color == B → user purchases if user.b >= T\n\nThe `count` attribute does not affect purchase decisions (reserved for future use)."
+  },
+  {
+    "id": "rules_5",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "1. Purchase Rules (購買ルール)",
+      "1.4 Threshold Interpretation"
+    ],
+    "text": "### 1.4 Threshold Interpretation\nWith threshold T=160:\n- Probability that a random user (uniform 0-255) exceeds threshold: (255-160+1)/256 ≈ 37.5%\n- Users with high R value tend to purchase Red items\n- Users with high G value tend to purchase Green items\n- Users with high B value tend to purchase Blue items"
+  },
+  {
+    "id": "rules_6",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "2. Recommendation Methods (推薦方式)"
+    ],
+    "text": "## 2. Recommendation Methods (推薦方式)"
+  },
+  {
+    "id": "rules_7",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "2. Recommendation Methods (推薦方式)",
+      "2.1 Random"
+    ],
+    "text": "### 2.1 Random\n- Proposes items uniformly at random from all 30 items\n- No learning or personalization\n- Serves as a baseline for comparison"
+  },
+  {
+    "id": "rules_8",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "2. Recommendation Methods (推薦方式)",
+      "2.2 Memory-based Collaborative Filtering"
+    ],
+    "text": "### 2.2 Memory-based Collaborative Filtering\n- Uses item-item similarity computed from training data\n- Similarity is based on co-purchase patterns (cosine similarity)\n- For new users:\n  - First proposal is random\n  - After purchases, recommends items similar to purchased items\n  - Builds user preference online through interactions"
+  },
+  {
+    "id": "rules_9",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "2. Recommendation Methods (推薦方式)",
+      "2.3 Model-based Collaborative Filtering"
+    ],
+    "text": "### 2.3 Model-based Collaborative Filtering\n- Uses Matrix Factorization (MF) with user/item embeddings\n- Trained using SGD on implicit feedback (purchase/non-purchase)\n- For new users:\n  - First proposal is random\n  - After each interaction, updates user embedding via online SGD\n  - Proposes items with highest predicted score"
+  },
+  {
+    "id": "rules_10",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "3. Evaluation Metrics (評価指標)"
+    ],
+    "text": "## 3. Evaluation Metrics (評価指標)"
+  },
+  {
+    "id": "rules_11",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "3. Evaluation Metrics (評価指標)",
+      "3.1 Purchase Rate"
+    ],
+    "text": "### 3.1 Purchase Rate\n- Formula: `purchased_count / (N_users × 10)`\n- Interpretation: Proportion of proposals that resulted in purchases\n- Higher is better for recommendation quality"
+  },
+  {
+    "id": "rules_12",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "3. Evaluation Metrics (評価指標)",
+      "3.2 Purchased Users"
+    ],
+    "text": "### 3.2 Purchased Users\n- Count of users who made at least one purchase\n- Shows coverage of recommendation effectiveness"
+  },
+  {
+    "id": "rules_13",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "3. Evaluation Metrics (評価指標)",
+      "3.3 Average Purchases per User"
+    ],
+    "text": "### 3.3 Average Purchases per User\n- Formula: `total_purchases / N_users`\n- Maximum possible: 10 (if every proposal results in purchase)"
+  },
+  {
+    "id": "rules_14",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "3. Evaluation Metrics (評価指標)",
+      "3.4 Color Breakdown"
+    ],
+    "text": "### 3.4 Color Breakdown\n- Purchases split by item color (R/G/B)\n- Shows which colors the method tends to recommend successfully"
+  },
+  {
+    "id": "rules_15",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "3. Evaluation Metrics (評価指標)",
+      "3.5 Histogram"
+    ],
+    "text": "### 3.5 Histogram\n- Distribution of purchases per user (0 to 10)\n- Shows variance in recommendation effectiveness across users"
+  },
+  {
+    "id": "rules_16",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "4. Experimental Protocol (実験プロトコル)"
+    ],
+    "text": "## 4. Experimental Protocol (実験プロトコル)"
+  },
+  {
+    "id": "rules_17",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "4. Experimental Protocol (実験プロトコル)",
+      "4.1 Training Phase"
+    ],
+    "text": "### 4.1 Training Phase\n1. Generate N_train users with random RGB values\n2. For each user, randomly propose 10 items\n3. Record purchase decisions based on the purchase rule\n4. Train MF model on this data\n5. Compute item-item similarity matrix"
+  },
+  {
+    "id": "rules_18",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "4. Experimental Protocol (実験プロトコル)",
+      "4.2 Inference Phase"
+    ],
+    "text": "### 4.2 Inference Phase\n1. Generate N_infer new users (different from training)\n2. For each user and each method:\n   - Make 10 sequential proposals\n   - Each proposal considers user's history (for CF methods)\n   - Record purchase decisions\n3. Compute metrics for each method"
+  },
+  {
+    "id": "rules_19",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "4. Experimental Protocol (実験プロトコル)",
+      "4.3 Seed and Reproducibility"
+    ],
+    "text": "### 4.3 Seed and Reproducibility\n- All random operations use seeded PRNG\n- Same seed produces identical results\n- Different seeds used for different stages to ensure independence"
+  },
+  {
+    "id": "rules_20",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "5. Expected Results (期待される結果)"
+    ],
+    "text": "## 5. Expected Results (期待される結果)"
+  },
+  {
+    "id": "rules_21",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "5. Expected Results (期待される結果)",
+      "5.1 Method Comparison"
+    ],
+    "text": "### 5.1 Method Comparison\n- Model-based CF should outperform Random significantly\n- Memory-based CF should also outperform Random\n- Model-based may outperform Memory-based due to online adaptation"
+  },
+  {
+    "id": "rules_22",
+    "source": "rules",
+    "headers": [
+      "Synthetic Recommender Benchmark - Rules and Definitions",
+      "5. Expected Results (期待される結果)",
+      "5.2 Why CF Methods Work Better"
+    ],
+    "text": "### 5.2 Why CF Methods Work Better\n- CF methods learn user preferences from interactions\n- They can infer that a user who likes Red items has high R value\n- They then recommend more Red items to that user\n- Random has no such adaptation capability"
+  }
+]

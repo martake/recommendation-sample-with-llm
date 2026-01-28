@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "Synthetic Recommender Benchmark",
+    "subtitle": "Model-based CF / Memory-based CF / Random"
+  },
+  "controls": {
+    "title": "Controls",
+    "trainUsers": "Train Users (N)",
+    "inferUsers": "Infer Users (N)",
+    "threshold": "Threshold (T)",
+    "epochs": "Epochs",
+    "seed": "Seed",
+    "generateTrain": "Generate Train",
+    "trainModel": "Train Model",
+    "runInference": "Run Inference",
+    "processing": "Processing..."
+  },
+  "dataSummary": {
+    "title": "Data Summary",
+    "items": "Items",
+    "trainUsers": "Train Users",
+    "trainLogs": "Train Logs",
+    "trainPurchaseRate": "Train Purchase Rate"
+  },
+  "thresholdChart": {
+    "title": "Users Above Threshold by Color",
+    "train": "Train",
+    "infer": "Infer",
+    "percentage": "Percentage (%)"
+  },
+  "results": {
+    "title": "Results",
+    "method": "Method",
+    "purchaseRate": "Purchase Rate",
+    "purchasedUsers": "Purchased Users",
+    "avgPurchases": "Avg Purchases/User",
+    "totalPurchases": "Total Purchases"
+  },
+  "charts": {
+    "title": "Charts",
+    "purchaseRate": "Purchase Rate (%)",
+    "histogram": "Purchases per User (Histogram)",
+    "purchases": "Purchases",
+    "users": "Users",
+    "byColor": "Purchases by Color"
+  },
+  "sampleLogs": {
+    "title": "Sample Inference Logs",
+    "users": "users",
+    "userColor": "User Color"
+  },
+  "methods": {
+    "random": "Random",
+    "memory-based": "Memory-based",
+    "model-based": "Model-based"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ja": "Japanese"
+  },
+  "llm": {
+    "title": "LLM Assistant",
+    "model": "Model",
+    "status": {
+      "label": "Status",
+      "idle": "Not loaded",
+      "loading": "Loading",
+      "ready": "Ready",
+      "generating": "Generating...",
+      "error": "Error"
+    },
+    "promptMode": "Prompt Mode",
+    "promptModes": {
+      "good": "Good (Detailed)",
+      "bad": "Bad (Minimal)",
+      "custom": "Custom"
+    },
+    "customPrompt": "Custom Prompt",
+    "customPromptHint": "Use {results}, {threshold}, {nInferUsers} as placeholders",
+    "loadModel": "Load Model",
+    "switchModel": "Switch Model",
+    "willSwitch": "will switch on generate",
+    "generate": "Generate Insight",
+    "insight": "Insight",
+    "showRAG": "Show RAG Context",
+    "hideRAG": "Hide RAG Context",
+    "showPrompt": "Show Prompt",
+    "hidePrompt": "Hide Prompt",
+    "ragContext": "RAG Context (Knowledge Base)",
+    "promptPreview": "Full Prompt"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "合成レコメンダーベンチマーク",
+    "subtitle": "モデルベースCF / メモリベースCF / ランダム"
+  },
+  "controls": {
+    "title": "設定",
+    "trainUsers": "学習ユーザ数 (N)",
+    "inferUsers": "推論ユーザ数 (N)",
+    "threshold": "閾値 (T)",
+    "epochs": "エポック数",
+    "seed": "シード値",
+    "generateTrain": "学習データ生成",
+    "trainModel": "モデル学習",
+    "runInference": "推論実行",
+    "processing": "処理中..."
+  },
+  "dataSummary": {
+    "title": "データ概要",
+    "items": "アイテム数",
+    "trainUsers": "学習ユーザ数",
+    "trainLogs": "学習ログ数",
+    "trainPurchaseRate": "学習購入率"
+  },
+  "thresholdChart": {
+    "title": "色別 閾値超過ユーザ割合",
+    "train": "学習",
+    "infer": "推論",
+    "percentage": "割合 (%)"
+  },
+  "results": {
+    "title": "結果",
+    "method": "方式",
+    "purchaseRate": "購入率",
+    "purchasedUsers": "購入ユーザ数",
+    "avgPurchases": "平均購入数/ユーザ",
+    "totalPurchases": "総購入数"
+  },
+  "charts": {
+    "title": "グラフ",
+    "purchaseRate": "購入率 (%)",
+    "histogram": "ユーザあたり購入回数（ヒストグラム）",
+    "purchases": "購入回数",
+    "users": "ユーザ数",
+    "byColor": "色別購入数"
+  },
+  "sampleLogs": {
+    "title": "推論サンプルログ",
+    "users": "ユーザ",
+    "userColor": "ユーザ色"
+  },
+  "methods": {
+    "random": "ランダム",
+    "memory-based": "メモリベース",
+    "model-based": "モデルベース"
+  },
+  "language": {
+    "label": "言語",
+    "en": "英語",
+    "ja": "日本語"
+  },
+  "llm": {
+    "title": "LLMアシスタント",
+    "model": "モデル",
+    "status": {
+      "label": "ステータス",
+      "idle": "未読み込み",
+      "loading": "読み込み中",
+      "ready": "準備完了",
+      "generating": "生成中...",
+      "error": "エラー"
+    },
+    "promptMode": "プロンプトモード",
+    "promptModes": {
+      "good": "Good（詳細）",
+      "bad": "Bad（簡易）",
+      "custom": "カスタム"
+    },
+    "customPrompt": "カスタムプロンプト",
+    "customPromptHint": "{results}, {threshold}, {nInferUsers} をプレースホルダとして使用可能",
+    "loadModel": "モデル読み込み",
+    "switchModel": "モデル切替",
+    "willSwitch": "生成時に切替",
+    "generate": "インサイト生成",
+    "insight": "インサイト",
+    "showRAG": "RAGコンテキストを表示",
+    "hideRAG": "RAGコンテキストを非表示",
+    "showPrompt": "プロンプトを表示",
+    "hidePrompt": "プロンプトを非表示",
+    "ragContext": "RAGコンテキスト（知識ベース）",
+    "promptPreview": "フルプロンプト"
+  }
+}
